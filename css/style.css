@@ -33,12 +33,12 @@ body {
     justify-items: center;
     align-items: center;
     row-gap: 50px;
-    width: min(95%, 450px);
+    width: min(95%, 366px);
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: #030616;
+    background-color: #161d2f;
     padding: 30px;
     border-radius: 15px;
 }
@@ -65,7 +65,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: #4A5567;
-    padding-block: 30px;
+    padding-block: 20px;
     border-radius: 10px;
 }
 
@@ -74,7 +74,7 @@ body {
     color: #F2F5F9;
     font-size: 32px;
     font-weight: 600;
-    letter-spacing: 25px;
+    letter-spacing: 15px;
 }
 
 .tries_mistakes {
