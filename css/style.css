@@ -1,0 +1,66 @@
+body {
+    /* background-image: linear-gradient(to right, #7429C6, #C951E7); */
+    background-image: url(../images/background.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100dvh;
+    display: grid;
+    place-items: center;
+
+}
+
+.font {
+    font-family: "Outfit", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.bg_words {
+    font-size: 15.5rem;
+    word-spacing: 13rem;
+    color: #ffffff2f;
+    text-wrap: nowrap;
+}
+
+
+/* main tag  */
+
+.main_tag {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: min(95%, 400px);
+    row-gap: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #030616;
+    padding: 30px;
+}
+
+.word_scramblle {
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(to right, #7429C6, #C951E7);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.guessing_word_div {
+    background-color: #4A5567;
+    width: 100%;
+    padding-block: 30px;
+}
+
+.guessing_word {
+    text-align: center;
+    color: #F2F5F9;
+    font-size: 32px;
+    letter-spacing: 5px;
+    font-weight: 600;
+}
