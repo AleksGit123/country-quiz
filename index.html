@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <title>Quiz Time</title>
 </head>
 
@@ -26,11 +27,51 @@
             Word Scramblle
         </h2>
 
-        <div class="guessing_word_div">
-            <h3 class="guessing_word font">Guessing Word</h3>
-        </div>
+        <section class="main_section">
+
+            <!-- section where guessing word will appear -->
+            <div class="guessing_word_div">
+                <h3 class="guessing_word font">Follow</h3>
+            </div>
+
+            <!-- displays tries and mistakes -->
+
+            <!-- tries -->
+            <div class="tries_mistakes">
+
+                <div class="tries_div">
+                    <p class="tries font">Tries
+                        <span class="num_of_tries font">(0/5):</span>
+                    </p>
+                    <div class="circles_of_tries"></div>
+                </div>
+
+                <!-- mistakes -->
+                <p class="mistakes font">
+                    Mistakes: <span class="num_of_mistakes font">f, o, u, r</span>
+                </p>
+
+            </div>
+        </section>
+
+        <!-- section for word input -->
+        <section class="input_section">
+            <input type="text" maxlength="1" class="font">
+            <input type="text" maxlength="1" class="font">
+            <input type="text" maxlength="1" class="font">
+            <input type="text" maxlength="1" class="font">
+            <input type="text" maxlength="1" class="font">
+        </section>
+
+
+        <!-- random and reset buttons section -->
+        <section class="btn_section">
+            <button class="random font">Random</button>
+            <button class="reset font">Reset</button>
+        </section>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
