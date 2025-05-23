@@ -7,7 +7,7 @@ body {
     min-height: 100dvh;
     display: grid;
     place-items: center;
-
+    user-select: none;
 }
 
 .font {
@@ -24,7 +24,7 @@ body {
     justify-items: center;
     align-items: center;
     /* row-gap: 30px; */
-    width: min(95%, 380px);
+    width: min(95%, 400px);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -86,11 +86,21 @@ body {
     color: #F2F5F9;
 }
 
+
+
 .circles_of_tries {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     background-color: #7429C6;
+}
+
+.fourth {
+    background-color: #451a74;
+}
+
+.fifth {
+    background-color: #2e0c52;
 }
 
 .mistakes {
@@ -106,7 +116,7 @@ body {
     justify-content: flex-start;
     column-gap: 8px;
     width: 100%;
-    padding-inline: 5px;
+    padding-inline: 15px;
     margin-block: 50px;
 }
 
@@ -121,7 +131,7 @@ input {
     font-size: 20px;
     text-align: center;
     caret-color: transparent;
-    transition: border .5s;
+    transition: border .3s;
     overflow: hidden;
 }
 
@@ -161,4 +171,8 @@ button:active {
 
 .reset {
     padding: 12px 37px;
+}
+
+.hide {
+    display: none;
 }
