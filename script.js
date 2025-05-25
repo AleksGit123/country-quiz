@@ -1,20 +1,23 @@
+
+// buttons
 let randomBtn = document.querySelector(".random");
 let resetBtn = document.querySelector(".reset");
-let inputs = document.querySelectorAll("input");
-let randomIndex = [];
+
+// empty variables
 let word = "";
 let mixed = "";
 let inputWord = "";
+let randomIndex = [];
+
+// html tags
 let guessingWord = document.querySelector(".guessing_word");
 let circleOfTries = document.querySelectorAll(".circles_of_tries");
-let countMistakes = 0;
-function tries(){
-    ++countMistakes;
-   console.log(circleOfTries[countMistakes])
-    for(let i = 0;i < circleOfTries.length;i++){
-        circleOfTries[countMistakes].style.display = "block";
-    }
-}
+let inputs = document.querySelectorAll("input");
+let numOfTries = document.querySelector(".num_of_tries");
+let mistakeLetters = document.querySelector(".num_of_mistakes")
+
+let countMistakes = -1;
+
 
 
 function generateWord(){
@@ -26,6 +29,7 @@ function generateWord(){
     })
     .then(data =>{
         word = data[0];
+        mixed = "";
         console.log(word)
 
         // generate unique numbers
@@ -60,16 +64,32 @@ inputs.forEach(input => input.disabled = false)
 
 });
 
+// count number of tries
+function tries(input){
+    ++countMistakes;
+    console.log(countMistakes)
+//    console.log(circleOfTries[0])
+    if(countMistakes < 5){
+        circleOfTries[countMistakes].style.display = "block";
+        numOfTries.innerHTML = `${countMistakes + 1} / 5`;
+        mistakeLetters.innerHTML += `${input.value},`;
+
+    }
+    else{
+        inputs.forEach(input => input.disabled = true)
+    
+    }
+    
+}
 
 inputs.forEach((input,index) =>{
     input.addEventListener("input", (e)=>{
     let splited = input.value.split("");
-        console.log(splited)
+        // console.log(splited)
 
         // if input word is deleted, input whole word is deleted
        if( splited.length > 0){
         inputWord += splited[splited.length-1];
-            // inputWord[inputWord.length - 1] = "";
         }
         else if(splited.length < 1){
             inputWord = inputWord.slice(0,-1);
@@ -93,7 +113,7 @@ inputs.forEach((input,index) =>{
         }
         else{
             input.style.backgroundColor = "red";
-            tries()
+            tries(input);
         
         }
 
@@ -103,10 +123,7 @@ inputs.forEach((input,index) =>{
             console.log("correct");
             guessingWord.innerHTML = "correct";
         }
-        else{
-            console.log("incorrect");
-        }
-        
+      
     })
     
     
@@ -117,10 +134,16 @@ resetBtn.addEventListener("click",() =>{
     guessingWord.innerHTML = "W O R D";
     inputs.forEach(input => input.value = "");
     inputs.forEach(input => input.disabled = true);
+    circleOfTries.forEach(circle => circle.style.display = "none");
+    inputs.forEach(input => input.style.backgroundColor = "transparent");
+    countMistakes = -1;
+    numOfTries.innerHTML = `0/5`;
+    mistakeLetters.innerHTML = "";
     inputWord = "";
     mixed = "";
     word = "";
     randomIndex = [];
+    // countMistakes = -1;
 
 })
 
