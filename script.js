@@ -77,7 +77,7 @@ function tries(input){
     }
     else{
         inputs.forEach(input => input.disabled = true)
-    
+        
     }
     
 }
